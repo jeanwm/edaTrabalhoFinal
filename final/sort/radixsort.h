@@ -34,10 +34,14 @@ int max(int v[], int n) {
 	}
 }
 
-void radixsort(int v[], int n) {
+int radixSort(int v[], int n) {
  	int m = max(v, n);
+	int c = 0;
 
  	for (int exp = 1; m / exp > 0; exp *= 10) {
+		c++;
  		countingsort(v, n, exp);
 	}
+
+	return c;
 }

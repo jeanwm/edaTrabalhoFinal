@@ -4,8 +4,10 @@
 #include "sort/swap.h"
 #include "sort/bubblesort.h"
 #include "sort/heapsort.h"
+#include "sort/insertsort.h"
 #include "sort/mergesort.h"
 #include "sort/quicksort.h"
+#include "sort/radixsort.h"
 
 int main() {
 	int n, i, j, k;

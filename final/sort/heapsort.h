@@ -21,16 +21,18 @@ void heapify(int v[], int n, int i) {
 	}
 }
 
-void heapSort(int v[], int n) {
+void heapSort(int v[], int n, int* c) {
 	int i = n / 2 - 1;
 
 	for (; i >= 0; i--) {
+		(*c)++;
 		heapify(v, n, i);
 	}
 
 	int j = n - 1;
 
 	for (; j > 0; j--) {
+		(*c)++;
  		swap(v, 0, j); 
  		heapify(v, j, 0);
  	}

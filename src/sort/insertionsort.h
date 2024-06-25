@@ -3,9 +3,7 @@ int insertionSort(int v[], int n) {
 
  	for (int i = 1; i < n; i++) {
  		pivot = v[i];
-		c++;
-
-		j = i - 1;
+		j 	  = i - 1;
 
 		while (j >= 0 && pivot < v[j]) {			
 			v[j + 1] = v[j]; 
@@ -16,6 +14,7 @@ int insertionSort(int v[], int n) {
 		v[j + 1] = pivot;
 		c++;
  	}
+	c++;
 
 	return c;
 }

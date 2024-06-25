@@ -3,8 +3,7 @@ int bubbleSort(int v[], int n) {
 
 	do {
 		swap = 0;
-		c++;
-
+		
 		for (i = 0; i < n - 1; i++) {
  			if (v[i] > v[i + 1]) {
  				int aux = v[i];
@@ -14,8 +13,11 @@ int bubbleSort(int v[], int n) {
  				
  				c++;
  			}
+			c++;
  		}
+		c++;
 	} while (swap);
+	c++;
 
 	return c;
 }

@@ -4,20 +4,20 @@ void heapify(int v[], int n, int i, int *c) {
 	int right = 2 * i + 2;
 
 	if (left < n && v[left] > v[root]) {
-		(*c)++;
 		root = left;
 	}
+	(*c)++;
 
 	if (right < n && v[right] > v[root]) {
-		(*c)++;
 		root = right;
 	}
+	(*c)++;
 
 	if (root != i) {
-		(*c)++;
 		swap(v, i, root);
 		heapify(v, n, root, c);
 	}
+	(*c)++;
 }
 
 int heapSort(int v[], int n) {
@@ -28,6 +28,7 @@ int heapSort(int v[], int n) {
 		c++;
 		heapify(v, n, i, &c);
 	}
+	c++;
 
 	int j = n - 1;
 
@@ -36,6 +37,7 @@ int heapSort(int v[], int n) {
  		swap(v, 0, j); 
  		heapify(v, j, 0, &c);
  	}
+	c++;
 
 	return c;
 }

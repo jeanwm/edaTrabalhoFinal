@@ -1,46 +1,53 @@
 void countingsort(int v[], int n, int exp, unsigned int* c) {
-    int saida[n], frequencia[10] = {0};
+    int out[n], freq[10] = {0};
 
     for (int i = 0; i < n; i++) {
         (*c)++;
-        frequencia[(v[i] / exp) % 10]++;
+        freq[(v[i] / exp) % 10]++;
     }
+    (*c)++;
 
     for (int i = 1; i < 10; i++) {
         (*c)++;
-        frequencia[i] += frequencia[i - 1];
+        freq[i] += freq[i - 1];
     }
+    (*c)++;
 
     for (int i = n - 1; i >= 0; i--) {
         (*c)++;
-        saida[frequencia[(v[i] / exp) % 10] - 1] = v[i];
-        frequencia[(v[i] / exp) % 10]--;
+        out[freq[(v[i] / exp) % 10] - 1] = v[i];
+        freq[(v[i] / exp) % 10]--;
     }
+    (*c)++;
 
     for (int i = 0; i < n; i++) {
         (*c)++;
-        v[i] = saida[i];
+        v[i] = out[i];
     }
+    (*c)++;
 }
 
-int max(int v[], int n, unsigned int* c) {
+int vector_max(int v[], int n, unsigned int* c) {
     int max = v[0];
 
-    for (int i = 1; i < n; i++){
+    for (int i = 1; i < n; i++) {
         (*c)++;
 
         if (v[i] > max) {
-            (*c)++;
             max = v[i];
         }
+
+        (*c)++;
     }
+
+    (*c)++;
 
     return max;
 }
 
 int radixSort(int v[], int n) {
     unsigned int c = 0;
-    int m = max(v, n, &c);
+    int m = vector_max(v, n, &c);
 
     for (int exp = 1; m / exp > 0; exp *= 10) {
         c++;

@@ -45,6 +45,7 @@ int* cpy_vector(int v[], int n) {
 }
 
 int main() {
+    int limit = 1000;
 	int times = 30;
 
     FILE *fptr = fopen("output.csv", "w");
@@ -57,7 +58,7 @@ int main() {
 
     fprintf(fptr, "Iterações, Bubble Sort, Insertion Sort, Heap Sort, Merge Sort, Quick Sort, Radix Sort\n");
 
-    for (int n = 1; n <= 1000; n++){
+    for (int n = 1; n <= limit; n++){
         unsigned int 
         bubblesort_sum    = 0,
         insertionsort_sum = 0,

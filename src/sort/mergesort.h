@@ -6,22 +6,26 @@ void merge(int v[], int ini, int mid, int end, int* c) {
  		(*c)++;
  		aux[k++] = v[i] <= v[j] ? v[i++] : v[j++];
  	}
+	(*c)++;
 
  	while (i <= mid) {
 		aux[k++] = v[i++]; 
 		(*c)++;  
-	}   
+	} 
+	(*c)++;  
 
  	while (j <= end) {
 		aux[k++] = v[j++]; 
 		(*c)++;	
 	}
+	(*c)++;
 
  	for (i = ini, k = 0; i <= end; i++, k++) {
  	 	(*c)++;
 
  		v[i] = aux[k];
  	}
+	(*c)++;
 }
 
 void _mergesort(int v[], int ini, int end, int* c) {

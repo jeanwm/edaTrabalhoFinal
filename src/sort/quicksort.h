@@ -3,8 +3,6 @@ int partition(int v[], int ini, int end, int *c) {
 	int i     = ini - 1;
 	int j 	  = 0;
 
-	(*c)++;
-
 	for (j = ini; j <= end - 1; j++) {
 		if (v[j] < pivot) {
 			i++;
@@ -12,24 +10,24 @@ int partition(int v[], int ini, int end, int *c) {
 			swap(v, i, j);
 			(*c)++;
 		}
+		(*c)++;
 	}
+	(*c)++;
 
 	swap(v, i + 1, end);
-
 	(*c)++;
 
 	return i + 1;
 }
 
 void _quicksort(int v[], int ini, int end, int *c) {
-	(*c)++;
-
  	if (ini < end) {
  		int meio = partition(v, ini, end, c);
 
  		_quicksort(v, ini, meio - 1, c);
  		_quicksort(v, meio + 1, end, c);
  	}
+	(*c)++;
 }
 
 int quickSort(int v[], int n) {

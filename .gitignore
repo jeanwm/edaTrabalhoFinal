@@ -1,2 +1,9 @@
+# Temp files
+.DS_Store
+
+# Visual Studio Code files
 .vscode
+
+# Compilation files
 a.out
+main.exe
